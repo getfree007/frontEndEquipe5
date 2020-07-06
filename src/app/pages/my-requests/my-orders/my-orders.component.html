@@ -1,0 +1,140 @@
+<div class="container-fluid">
+  <app-page-title title="Pedidos"></app-page-title>
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12 small-box" style="padding-left: 2rem; padding-bottom: 2rem;">
+      <div class="card border border-primary">
+        <div class="card-header bg-transparent border-primary row">
+          <h5 class="my-0 text-primary"><i class="mdi mdi-bullseye-arrow mr-3" style="font-size: 1.5rem;"></i>Seus Pedidos nessa semana: </h5>
+        </div>
+        <div class="card-body" style="height: 21rem;">
+          <div echarts [options]="barChart" class="demo-chart" style="height:18rem;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 small-box">
+      <div class="row ">
+        <div class="card border border-primary">
+          <div class="card-header bg-transparent border-primary row">
+            <h5 class="my-0 text-primary"><i class="mdi mdi-bullseye-arrow mr-3" style="font-size: 1.5rem;"></i>Pedidos
+              em andamento: </h5>
+            <h5 style="color: red ; font-size: 1.5rem;; padding-left: 1rem; padding-top: 0.2rem;">
+              {{norders}}</h5>
+          </div>
+          <div class="card-body"  style="height: 20.3rem;">
+            <div class="row">
+
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <label class="labelpbar1">Pagamentos</label>
+                <div class="card-body   mycontent-left">
+                  <div class="row">
+                    <div class="">
+                      <label class="labelpbar">{{paymentsc}} Pagamentos confirmados</label>
+                      <p>
+                        <ngb-progressbar type="success" [value]="paymentsc" [striped]="true">
+                        </ngb-progressbar>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="">
+                      <label class="labelpbar">{{paymentsp}} Pagamentos pendentes</label>
+                      <p>
+                        <ngb-progressbar type="warning" [value]="paymentsp" [striped]="true">
+                        </ngb-progressbar>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="">
+                      <label class="labelpbar">{{paymentse}} Pagamentos Extornados</label>
+                      <p>
+                        <ngb-progressbar type="danger" [value]="paymentse" [striped]="true">
+                        </ngb-progressbar>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <label class="labelpbar1">Etiquetas</label>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="">
+                      <label class="labelpbar">{{gtags}} Etiquetas Geradas</label>
+                      <p>
+                        <ngb-progressbar type="success" [value]="gtags" [striped]="true">
+                        </ngb-progressbar>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="">
+                      <label class="labelpbar">{{ptags}} Etiquetas pendentes</label>
+                      <p>
+                        <ngb-progressbar type="info" [value]="ptags" [striped]="true">
+                        </ngb-progressbar>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="">
+                      <label class="labelpbar">{{ltags}} Etiquetas atrasadas</label>
+                      <p>
+                        <ngb-progressbar type="warning" [value]="ltags" [striped]="true">
+                        </ngb-progressbar>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="">
+                      <label class="labelpbar">{{etags}} Etiquetas com erro</label>
+                      <p>
+                        <ngb-progressbar type="danger" [value]="etags" [striped]="true">
+                        </ngb-progressbar>
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid" style="padding-top: 2rem;">
+  <div class="row">
+    <div class="col-12">
+      <div class="card border border-primary">
+        <div class="card-body">
+          <div class="row">
+          </div>
+          <div class="row mb-2">
+            <div class="col-sm-4">
+              <div class="search-box mr-2 mb-2 d-inline-block">
+                <div class="position-relative">
+                  <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="term">
+                  <i class="bx bx-search-alt search-icon"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-8">
+              <div class="text-sm-right">
+                <button type="button" class="btn btn-success btn-rounded mb-2 mr-2"><i
+                  class="mdi mdi-plus mr-1"></i>
+                  Novo Pedido</button>
+              </div>
+            </div><!-- end col-->
+          </div>
+
+
+          <!-- Table data -->
+          <app-transaction [transactions]="transactions"></app-transaction>
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,412 @@
+<div class="container-fluid">
+
+    <div class="row">
+      <div class="col-md-8 col-sm-12 ">
+        <div class="card border border-primary">
+          <div class="card-body">
+            <h5 class="my-0 text-primary">
+              <i class="mdi mdi-bullseye-arrow mr-3" style="font-size: 1.5rem;"></i>Produtos mais vendidos
+            </h5>
+            <br>
+              <ul ngbNav #justifiednav="ngbNav" [activeId]="3" class="nav-pills nav-justified">
+                <li [ngbNavItem]="1">
+                  <a ngbNavLink>
+                    <span class="d-sm-block">Semanal</span>
+                  </a>
+                  <ng-template ngbNavContent>
+                    <ng-template [ngTemplateOutlet]="TabContent"></ng-template>
+                  </ng-template>
+                </li>
+                <li [ngbNavItem]="2">
+                  <a ngbNavLink>
+                    <span class="d-sm-block">Mensal</span>
+                  </a>
+                  <ng-template ngbNavContent>
+                    <ng-template [ngTemplateOutlet]="TabContent"></ng-template>
+                  </ng-template>
+                </li>
+                <li [ngbNavItem]="3">
+                  <a ngbNavLink>
+                    <span class="d-sm-block">Anual</span>
+                  </a>
+                  <ng-template ngbNavContent>
+                    <ng-template [ngTemplateOutlet]="TabContent"></ng-template>
+                  </ng-template>
+                </li>
+              </ul>
+              <div [ngbNavOutlet]="justifiednav"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <div class="card border border-primary">
+          <div class="card-body">
+            <h5 class="my-0 text-primary">
+              <i class="mdi mdi-bullseye-arrow mr-3" style="font-size: 1.5rem;"></i>Minha margem de lucro
+            </h5>
+            <br>
+            <ul ngbNav #justifiednav2="ngbNav" [activeId]="3" class="nav-pills nav-justified">
+              <li [ngbNavItem]="1">
+                <a ngbNavLink>
+                  <span class="d-sm-block">Semanal</span>
+                </a>
+                <ng-template ngbNavContent>
+                  <ng-template [ngTemplateOutlet]="TabContent2"></ng-template>
+                </ng-template>
+              </li>
+              <li [ngbNavItem]="2">
+                <a ngbNavLink>
+                  <span class="d-sm-block">Mensal</span>
+                </a>
+                <ng-template ngbNavContent>
+                  <ng-template [ngTemplateOutlet]="TabContent2"></ng-template>
+                </ng-template>
+              </li>
+              <li [ngbNavItem]="3">
+                <a ngbNavLink>
+                  <span class="d-sm-block">Anual</span>
+                </a>
+                <ng-template ngbNavContent>
+                  <ng-template [ngTemplateOutlet]="TabContent2"></ng-template>
+                </ng-template>
+              </li>
+            </ul>
+            <div [ngbNavOutlet]="justifiednav2"></div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- end row -->
+    <br><br>
+    <div class="row">
+      <div class="col-md-8 col-sm-12">
+        <div class="card border border-primary">
+          <div class="card-body">
+            <h5 class="my-0 text-primary">
+              <i class="mdi mdi-bullseye-arrow mr-3" style="font-size: 1.5rem;"></i>Vendas por canal
+            </h5>
+            <br>
+            <ul ngbNav #justifiednav4="ngbNav" [activeId]="3" class="nav-pills nav-justified">
+              <li [ngbNavItem]="1">
+                <a ngbNavLink>
+                  <span class="d-sm-block">Semanal</span>
+                </a>
+                <ng-template ngbNavContent>
+                  <ng-template [ngTemplateOutlet]="TabContent4"></ng-template>
+                </ng-template>
+              </li>
+              <li [ngbNavItem]="2">
+                <a ngbNavLink>
+                  <span class="d-sm-block">Mensal</span>
+                </a>
+                <ng-template ngbNavContent>
+                  <ng-template [ngTemplateOutlet]="TabContent4"></ng-template>
+                </ng-template>
+              </li>
+              <li [ngbNavItem]="3">
+                <a ngbNavLink>
+                  <span class="d-sm-block">Anual</span>
+                </a>
+                <ng-template ngbNavContent>
+                  <ng-template [ngTemplateOutlet]="TabContent4"></ng-template>
+                </ng-template>
+              </li>
+            </ul>
+            <div [ngbNavOutlet]="justifiednav4"></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <div class="card border border-primary">
+          <div class="card-body">
+            <h5 class="my-0 text-primary">
+              <i class="mdi mdi-bullseye-arrow mr-3" style="font-size: 1.5rem;"></i>Canais de maior circulação
+            </h5>
+            <br>
+            <ul ngbNav #justifiednav5="ngbNav" [activeId]="3" class="nav-pills nav-justified">
+              <li [ngbNavItem]="1">
+                <a ngbNavLink>
+                  <span class="d-sm-block">Semanal</span>
+                </a>
+                <ng-template ngbNavContent>
+                  <ng-template [ngTemplateOutlet]="TabContent5"></ng-template>
+                </ng-template>
+              </li>
+              <li [ngbNavItem]="2">
+                <a ngbNavLink>
+                  <span class="d-sm-block">Mensal</span>
+                </a>
+                <ng-template ngbNavContent>
+                  <ng-template [ngTemplateOutlet]="TabContent5"></ng-template>
+                </ng-template>
+              </li>
+              <li [ngbNavItem]="3">
+                <a ngbNavLink>
+                  <span class="d-sm-block">Anual</span>
+                </a>
+                <ng-template ngbNavContent>
+                  <ng-template [ngTemplateOutlet]="TabContent5"></ng-template>
+                </ng-template>
+              </li>
+            </ul>
+            <div [ngbNavOutlet]="justifiednav5"></div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="card border border-primary">
+          <div class="card-body">
+            <h5 class="my-0 text-primary">
+              <i class="mdi mdi-bullseye-arrow mr-3" style="font-size: 1.5rem;"></i>Meu ticket médio
+            </h5>
+            <br>
+            <ul ngbNav #justifiednav3="ngbNav" [activeId]="3" class="nav-pills nav-justified">
+              <li [ngbNavItem]="1">
+                <a ngbNavLink>
+                  <span class="d-sm-block">Semanal</span>
+                </a>
+                <ng-template ngbNavContent>
+                  <ng-template [ngTemplateOutlet]="TabContent3"></ng-template>
+                </ng-template>
+              </li>
+              <li [ngbNavItem]="2">
+                <a ngbNavLink>
+                  <span class="d-sm-block">Mensal</span>
+                </a>
+                <ng-template ngbNavContent>
+                  <ng-template [ngTemplateOutlet]="TabContent3"></ng-template>
+                </ng-template>
+              </li>
+              <li [ngbNavItem]="3">
+                <a ngbNavLink>
+                  <span class="d-sm-block">Anual</span>
+                </a>
+                <ng-template ngbNavContent>
+                  <ng-template [ngTemplateOutlet]="TabContent3"></ng-template>
+                </ng-template>
+              </li>
+            </ul>
+            <div [ngbNavOutlet]="justifiednav3"></div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>
+<ng-template #TabContent>
+  <br>
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+      <h4 class="card-title mb-4" style="text-align: center;">Maiores lucros (R$)</h4>
+      <div>
+        <apx-chart class="apex-charts" dir="ltr" [series]="higherProfitsChart.series"
+                   [chart]="higherProfitsChart.chart" [colors]="higherProfitsChart.colors"
+                   [plotOptions]="higherProfitsChart.plotOptions"
+                   [legend]="higherProfitsChart.legend" [labels]="higherProfitsChart.labels">
+        </apx-chart>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-sm-12">
+      <h4 class="card-title mb-4" style="text-align: center;">Produtos mais vendidos (u)</h4>
+      <div>
+        <apx-chart class="apex-charts" dir="ltr" [series]="bestSellersChart.series"
+                   [chart]="bestSellersChart.chart" [colors]="bestSellersChart.colors"
+                   [plotOptions]="bestSellersChart.plotOptions"
+                   [legend]="bestSellersChart.legend" [labels]="bestSellersChart.labels">
+        </apx-chart>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-12">
+      <button type="button"  style="float: right" class="btn btn-primary btn-sm btn-rounded" (click)="openModal(content)">?</button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #TabContent2>
+  <br>
+  <div class="row">
+    <div class="col-12">
+      <form>
+        <select name="marketplaces" id="marketplaces">
+          <option value="b2w">B2W</option>
+          <option value="mercadoLivre">Mercado Livre</option>
+          <option value="amazon">Amazon</option>
+          <option value="lojaFisica">Loja Física</option>
+        </select>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <apx-chart class="apex-charts" dir="ltr" [series]="profitMargin.series"
+                 [chart]="profitMargin.chart" [colors]="profitMargin.colors"
+                 [legend]="profitMargin.legend"
+                 [yaxis]="profitMargin.yaxis" [xaxis]="profitMargin.xaxis"
+                 [stroke]="profitMargin.stroke" [dataLabels]="profitMargin.dataLabels">
+      </apx-chart>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #TabContent3>
+  <br>
+  <div class="row">
+    <div class="col-md-9 col-sm-12">
+      <apx-chart class="apex-charts" dir="ltr" [series]="averageTicketChart.series"
+                 [chart]="averageTicketChart.chart" [colors]="averageTicketChart.colors"
+                 [plotOptions]="averageTicketChart.plotOptions"
+                 [legend]="averageTicketChart.legend" [labels]="averageTicketChart.labels"
+                 [yaxis]="averageTicketChart.yaxis" >
+      </apx-chart>
+    </div>
+
+    <div class="col-md-3 col-sm-12">
+      <br><br>
+      <h1 style="text-align: center">Último Ano</h1>
+      <br>
+      <p style="text-align: center;">
+        <span style="color: darkblue;font-size: 56px">R${{ averageTicket }}</span>
+        <br>
+        <span style="font-size: 14px;font-weight: bold">Ticket médio</span>
+      </p>
+      <br>
+      <p style="text-align: center;">
+        <span style="color: dodgerblue;font-size: 56px">{{ totalSold }}</span>
+        <br>
+        <span style="font-size: 14px;font-weight: bold">Total vendido</span>
+      </p>
+    </div>
+  </div>
+
+</ng-template>
+
+<ng-template #TabContent4>
+  <br>
+  <div class="row">
+    <div class="col-3">
+      <form>
+        <select name="contentRevenues" id="contentRevenues">
+          <option value="content">Volume</option>
+          <option value="revenues">Faturamento</option>
+        </select>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <apx-chart class="apex-charts" dir="ltr" [series]="salesChannelChart.series" [chart]="salesChannelChart.chart"
+                 [plotOptions]="salesChannelChart.plotOptions" [yaxis]="salesChannelChart.yaxis" [grid]="salesChannelChart.grid"
+                 [tooltip]="salesChannelChart.tooltip" [stroke]="salesChannelChart.stroke"
+                 [dataLabels]="salesChannelChart.dataLabels" [xaxis]="salesChannelChart.xaxis" [colors]="salesChannelChart.colors"
+                 [fill]="salesChannelChart.fill">
+      </apx-chart>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-12">
+      <button type="button"  style="float: right" class="btn btn-primary btn-sm btn-rounded" (click)="openModal(content2)">?</button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #TabContent5>
+  <br>
+  <div class="row">
+    <div class="col-12">
+      <form>
+        <select name="contentRevenues2" id="contentRevenues2">
+          <option value="content2">Volume</option>
+          <option value="revenues2">Faturamento</option>
+        </select>
+      </form>
+    </div>
+  </div><br>
+  <div class="row">
+    <div class="col-12">
+      <apx-chart class="apex-charts" dir="ltr" [series]="circulationChannelsChart.series"
+                 [chart]="circulationChannelsChart.chart" [colors]="circulationChannelsChart.colors"
+                 [plotOptions]="circulationChannelsChart.plotOptions"
+                 [legend]="circulationChannelsChart.legend" [labels]="circulationChannelsChart.labels">
+      </apx-chart>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-12">
+      <button type="button"  style="float: right" class="btn btn-primary btn-sm btn-rounded" (click)="openModal(content3)">?</button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #content role="document" let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title mt-0">Outros produtos</h5>
+    <button type="button" class="close" aria-hidden="true" (click)="modal.dismiss('Cross click')">×</button>
+  </div>
+  <div class="modal-body">
+    <form (submit)="search(pCode.value)">
+      <label for="productCode">Código do produto &nbsp;</label>
+      <input #pCode type="text" id="productCode" name="productCode">
+      <input type="submit" style="float:right;" class="btn btn-primary" value="Pesquisar">
+    </form>
+    <hr>
+    <div *ngFor="let data of productData">
+      <span>Quantidade:&nbsp;&nbsp; {{ data.amount }}</span>
+      <span style="float:right;">Lucro:&nbsp;&nbsp; R${{ data.profit }}</span>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
+
+<ng-template #content2 role="document" let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title mt-0">Outros canais</h5>
+    <button type="button" class="close" aria-hidden="true" (click)="modal.dismiss('Cross click')">×</button>
+  </div>
+  <div class="modal-body" *ngFor="let other of others">
+    {{ other.name }}
+    {{ other.icon }}
+    <div style="float: right">
+      {{ other.amount }}u &nbsp;&nbsp;
+      R${{ other.revenues }}
+    </div>
+    <hr>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
+
+<ng-template #content3 role="document" let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title mt-0">Outros canais</h5>
+    <button type="button" class="close" aria-hidden="true" (click)="modal.dismiss('Cross click')">×</button>
+  </div>
+  <div class="modal-body" *ngFor="let other of others">
+    {{ other.name }}
+    {{ other.icon }}
+    <div style="float: right">
+      {{ other.amount }}u &nbsp;&nbsp;
+      R${{ other.revenues }}
+    </div>
+    <hr>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>

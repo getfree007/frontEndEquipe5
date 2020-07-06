@@ -1,0 +1,332 @@
+<div class="container-fluid  bg1">
+    <div class="row">
+        <div class="col-lg-7 col-md-7 col-sm-0">
+            <img alt="gestao" src="../../../../assets/images/landingpage/Logo.png" class="img-fluid pl-3 pt-3">
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-12">
+            <div class="p-2">
+                <form class="form-horizontal" [formGroup]="loginForm" (ngSubmit)="login()">
+
+                    <ngb-alert type="danger" *ngIf="error" [dismissible]="false">{{ error }}</ngb-alert>
+
+                    <div class="form-group mb-3">
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="email">Email</label>
+                                <input type="email" formControlName="userName" class="form-control" id="email"
+                                    placeholder="Email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                    <div *ngIf="f.email.errors.required">Email is required</div>
+                                    <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <div class="form-group mb-3">
+                                            <label for="password">Senha</label>
+
+                                            <input type="password" formControlName="password" class="form-control"
+                                                id="password"
+                                                [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+                                                placeholder="Password" />
+                                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                                <div *ngIf="f.password.errors.required">Password is required</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="mt-3" style="padding-top: 0.7rem;">
+                                            <button class="btn btn-primary" type="submit">Log In</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customControlInline">
+                                <label class="custom-control-label" for="customControlInline">Lembre-se de mim</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class=" text-center">
+                                <a routerLink="/account/reset-password" class="text-info"><i
+                                        class="mdi mdi-lock mr-1"></i>Esqueceu sua senha?</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class=" col-lg-7 col-md-6 col-sm-0">
+            <img alt="Empresarias" src="../../../../assets/images/landingpage/Grupo 1808@2x.png" class="img-fluid">
+        </div>
+        <div class=" col-lg-5 col-md-6 col-sm-12 d-flex justify-content-center">
+
+            <div class="form-group pt-3 mt-5  w-75">
+                <div class="p-3 rounded mt-4" style="background-color: #080E33 ; color: white;">
+                    <p style="font-size: 20px">Seja bem vindo(a)!</p>
+                    <span>Crie uma conta para o seu negócio</span>
+                </div>
+                <div class="w-100 d-inline-block">
+                    <label for="nome" class="label">Nome </label><br>
+                    <input class="w-100" type="text" id="nome" placeholder="Digite seu nome"><br><br>
+                    <label for="email" class="label">Email </label><br>
+                    <input class="w-100" type="email" id="email" placeholder="Digite seu email"><br><br>
+                    <label for="senha" class="label">Senha </label><br>
+                    <input class="w-100" type="password" id="senha" placeholder="Digite sua senha"><br><br>
+                    <label for="senhaC" class="label">Confirme sua senha </label><br>
+                    <input class="w-100" type="password" id="senhaC" placeholder="Digite sua senha"><br><br>
+                    <input (click)="gotosignup()" class="w-100 rounded" type="submit" name="criarConta" value="Criar minha conta"
+                        style="background-color:#080E33 ; color: white;"><br><br>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+        <div class="col-auto text-center w-75">
+            <div class="p-2 rounded mt-4" style="background-color: #080E33 ; color: white;">
+                <p class="align-text-middle" style="font-size: 2rem">Nossos serviços</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-0">
+            <img alt="trabalho" src="../../../../assets/images/landingpage/trampo.png" class="img-fluid">
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <h1 class="pt-5 pl-2 pb-3">Integração de todos seus canais de vendas</h1>
+            <ul style="font-size: 1.5rem;">
+                <li class="pb-5">Acompanhamento de todos seus pedidos de
+                    diferentes plataformas de venda;</li>
+                <li class="pb-5">Acompanhamento de todos seus pedidos de
+                    diferentes plataformas de venda;</li>
+                <li class="pb-3">Controle de produtos e gerenciamento do
+                    seu estoque;</li>
+            </ul>
+            <button type="button" class="btn w-75 d-flex justify-content-center btn-primary ml-5"
+                style="background-color: #080E33; font-size: 1rem;" onclick="window.scrollTo(0,0);">Integrar meus
+                canais</button>
+        </div>
+    </div>
+    <hr class="w-50">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-0">
+            <h1 class="pt-5 pl-2 pb-3">Facilidade na Gestão</h1>
+            <ul style="font-size: 1.5rem;">
+                <li class="pb-5">Visualização fácil de dados importantes do
+                    seu negócio;</li>
+                <li class="pb-5">Gerenciamento de vendas, pedidos e fluxo
+                    de caixa;</li>
+                <li class="pb-3">Gerenciamento de recebimentos e pagamentos
+                    a serem feitos;</li>
+            </ul>
+            <button type="button" class="btn w-75 d-flex justify-content-center btn-primary ml-5"
+                style="background-color: #080E33; font-size: 1rem;" onclick="window.scrollTo(0,0);">Quero facilitar
+                minha gestão</button>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <img alt="trabalho" src="../../../../assets/images/landingpage/imagem3.png" class="img-fluid">
+        </div>
+    </div>
+    <hr class="w-50">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-0">
+            <img alt="trabalho" src="../../../../assets/images/landingpage/tiozin.png" class="img-fluid">
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <h1 class="pt-5 pl-2 pb-3">Ideal para você, Micro e Pequeno
+                Empreendedor!</h1>
+            <ul style="font-size: 1.5rem;">
+                <li class="pb-5">Gestão aprimorada de seu negócio;</li>
+                <li class="pb-5">Saiba tudo que está acontecendo com seus
+                    canais de venda;</li>
+            </ul>
+            <button type="button" class="btn w-75 d-flex justify-content-center btn-primary ml-5"
+                style="background-color: #080E33; font-size: 1rem;" onclick="window.scrollTo(0,0);">Criar minha
+                conta!</button>
+        </div>
+    </div>
+    <hr class="w-50">
+    <div class="row d-flex justify-content-center">
+        <div class="col-auto text-center w-75">
+            <div class="p-2 rounded mt-4" style="background-color: #080E33 ; color: white;">
+                <p class="align-text-middle" style="font-size: 2rem">Nossos Planos</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card plan-box ml-5 p-5">
+                <div class="card-body p-4">
+                    <div class="media">
+                        <div class="media-body">
+                            <h5>Grátis</h5>
+                            <p class="text-muted"> Para você que está começando</p>
+                        </div>
+                        <div class="ml-3">
+                            <i class="bx  h1 text-primary"></i>
+                        </div>
+                    </div>
+                    <div class="py-4">
+                        <h2>
+                            <sup>
+                                <small>R$</small>
+                            </sup>
+                            De Graça para você
+                            <span class="font-size-13"></span>
+                        </h2>
+                    </div>
+                    <div class="text-center plan-btn">
+                        <a onclick="window.scrollTo(0,0);" class="btn btn-primary btn-sm position-relative" style="color: white;">Criar minha
+                            conta</a>
+                    </div>
+
+                    <div class="plan-features mt-5">
+                        <p>
+                            <i class="bx bx-checkbox-square text-primary mr-2"></i> Até 1 Usuário
+                        </p>
+                        <p>
+                            <i class="bx bx-checkbox-square text-primary mr-2"></i> Facilidade Na Gestão
+                        </p>
+                        <p>
+                            <i class="bx bx-checkbox-square text-primary mr-2"></i> Painel de controle geral
+                        </p>
+                        <p>
+                            <i class="bx bx-checkbox-square text-primary mr-2"></i> Gerenciamento de estoque e vendas
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card plan-box ml-5 p-5">
+                <div class="card-body p-4">
+                    <div class="media">
+                        <div class="media-body">
+                            <h5>Plano Premium</h5>
+                            <p class="text-muted">Ajuda que cabe no bolso!</p>
+                        </div>
+                        <div class="ml-3">
+                            <i class="bx  h1 text-primary"></i>
+                        </div>
+                    </div>
+                    <div class="py-4">
+                        <h2>
+                            <sup>
+                                <small>R$</small>
+                            </sup>
+                            49.99/
+                            <span class="font-size-13"></span>
+                        </h2>
+                    </div>
+                    <div class="text-center plan-btn">
+                        <a onclick="window.scrollTo(0,0);" class="btn btn-primary btn-sm position-relative" style="color: white;">Criar minha
+                            conta</a>
+                    </div>
+
+                    <div class="plan-features mt-5">
+                        <p>
+                            <i class="bx bx-checkbox-square text-primary mr-2"></i> Tudo do 'Plano Básico';
+                        </p>
+                        <p>
+                            <i class="bx bx-checkbox-square text-primary mr-2"></i> Até 3 usuários
+                        </p>
+                        <p>
+                            <i class="bx bx-checkbox-square text-primary mr-2"></i> Número de Pedidos online: 120
+                        </p>
+                        <p>
+                            <i class="bx bx-checkbox-square text-primary mr-2"></i> Integração das plataformas de
+                            venda, digitais e físicas;
+                        </p>
+                        <p>
+                            <i class="bx bx-checkbox-square text-primary mr-2"></i> Visibilidade integrada do
+                            fluxo de caixa
+                        </p>
+                        <p>
+                            <i class="bx bx-checkbox-square text-primary mr-2"></i> Emissão de notas fiscais e
+                            etiquetas.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card plan-box ml-5 p-5">
+                <div class="card-body p-4">
+                    <div class="media">
+                        <div class="media-body">
+                            <h5>Plano Pro</h5>
+                            <p class="text-muted">Para você que venda a mais tempo!</p>
+                        </div>
+                        <div class="ml-3">
+                            <i class="bx  h1 text-primary"></i>
+                        </div>
+                    </div>
+                    <div class="py-4">
+                        <h2>
+                            <sup>
+                                <small>R$</small>
+                            </sup>
+                            109.99/
+                            <span class="font-size-13"></span>
+                        </h2>
+                    </div>
+                    <div class="text-center plan-btn">
+                        <a onclick="window.scrollTo(0,0);" class="btn btn-primary btn-sm position-relative" style="color: white;">Criar minha
+                            conta</a>
+                    </div>
+
+                    <div class="plan-features mt-5">
+                        <p>
+                            <i class="bx bx-checkbox-square text-primary mr-2"></i> Tudo do 'Plano Premium';
+                        </p>
+                        <p>
+                            <i class="bx bx-checkbox-square text-primary mr-2"></i> Número de usuários: 15
+                        </p>
+                        <p>
+                            <i class="bx bx-checkbox-square text-primary mr-2"></i> Número de Pedidos online: 580
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card plan-box ml-5 p-5">
+                <div class="card-body p-4">
+                    <div class="media">
+                        <div class="media-body">
+                            <h5>Consultoria Personalizadda</h5>
+                            <p class="text-muted">Para você que quer lapidar seu negócio</p>
+                        </div>
+                        <div class="ml-3">
+                            <i class="bx  h1 text-primary"></i>
+                        </div>
+                    </div>
+                    <div class="py-4">
+                        <h2>
+                            
+                            Agende uma reunião de diagnóstico!
+                            <span class="font-size-13"></span>
+                        </h2>
+                    </div>
+                    <div class="text-center plan-btn">
+                        <a onclick="window.scrollTo(0,0);" class="btn btn-primary btn-sm position-relative" style="color: white;">Criar minha
+                            conta</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

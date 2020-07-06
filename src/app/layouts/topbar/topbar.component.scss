@@ -1,0 +1,21 @@
+.topbar-text{
+    font-size: 2rem;
+    padding-left:2rem;
+    margin-top: 0.6rem
+
+    
+}
+.flush{
+    position: fixed;
+    right: 0rem;
+    margin-top: 0.4rem;
+}
+
+@media only screen and (max-width: 600px){
+    .topbar-text{
+        display: none;
+}
+.flush{
+    left: 8rem;
+}
+}

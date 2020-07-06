@@ -1,0 +1,285 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="card border border-primary">
+                <div class="card-header bg-transparent border-primary">
+                    <h5 class="my-0 text-primary"><i class="mdi mdi-bullseye-arrow mr-3"></i>Balanço Total</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="card-title mt-0" style="font-size: 1.8rem;">Receita:</p>
+                        </div>
+                        <div class="col-6" style="padding-top: 0.3rem;">
+                            <p class="text-success" style="font-size: 1.5rem; font-weight: 600;">R$ {{income}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="card-title mt-0" style="font-size: 1.8rem;">Despesas:</p>
+                        </div>
+                        <div class="col-6" style="padding-top: 0.3rem;">
+                            <p class="text-danger" style="font-size: 1.5rem; font-weight: 600;">R$ -{{outcome}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="card-title mt-0" style="font-size: 1.8rem;">Saldo:</p>
+                        </div>
+                        <div class="col-6" style="padding-top: 0.3rem;">
+                            <p class="text-success" style="font-size: 1.5rem; font-weight: 600;">R$ {{saldo}}</p>
+                        </div>
+                    </div>
+                    <hr style="color:darkslategray">
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="text-success" style="font-size: 2rem;text-align: center;">+{{percentage}}%</p>
+                        </div>
+                        <div class="col-6">
+                            <p class="card-title mt-0" style="font-size: 1rem; text-align: center;">Em comparação com o
+                                mês anterior</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="card-title mt-0"
+                                style="font-size: 1.5rem; text-align: center; font-weight: lighter;">Mês anterior:</p>
+                            <p class="card-title mt-0" style="font-size: 1.5rem; text-align: center; font-weight: 600;">
+                                R$ {{lastmonth}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="card border border-primary">
+                <div class="row">
+                    <div class="col-10 card-header bg-transparent border-primary">
+                        <h5 class="my-0 text-primary"><i class="mdi mdi-bullseye-arrow mr-3"></i>Balanço Total</h5>
+                    </div>
+                    <div class="col-2">
+                        <div class="btn-group" role=" group" ngbDropdown style="padding-top: 1.5rem;">
+                            <button id="btnGroupVerticalDrop1" type="button" class="btn btn-secondary dropdown-toggle"
+                                ngbDropdownToggle>
+                                Mês <i class="mdi mdi-chevron-down"></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1" ngbDropdownMenu>
+                                <a class="dropdown-item" href="javascript: void(0);">Janeiro</a>
+                                <a class="dropdown-item" href="javascript: void(0);">Fevereiro</a>
+                                <a class="dropdown-item" href="javascript: void(0);">Março</a>
+                                <a class="dropdown-item" href="javascript: void(0);">Abril</a>
+                                <a class="dropdown-item" href="javascript: void(0);">Maio</a>
+                                <a class="dropdown-item" href="javascript: void(0);">Junho</a>
+                                <a class="dropdown-item" href="javascript: void(0);">Julho</a>
+                                <a class="dropdown-item" href="javascript: void(0);">Agosto</a>
+                                <a class="dropdown-item" href="javascript: void(0);">Setembro</a>
+                                <a class="dropdown-item" href="javascript: void(0);">Outubro</a>
+                                <a class="dropdown-item" href="javascript: void(0);">Novembro</a>
+                                <a class="dropdown-item" href="javascript: void(0);">Dezembro</a>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div echarts [options]="lineChart" class="demo-chart" style="height: 23rem;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="card border border-primary">
+                <div class="card-header bg-transparent border-primary">
+                    <h5 class="my-0 text-primary"><i class="mdi mdi-bullseye-arrow mr-3"></i>Estoque dos produtos mais vendidos</h5>
+                </div>
+                <div class="card-body">
+                    <apx-chart style="padding-left: 1rem;" class="apex-charts" dir="ltr" [series]="barChart.series"
+                        [chart]="barChart.chart" [plotOptions]="barChart.plotOptions" [dataLabels]="barChart.dataLabels"
+                        [xaxis]="barChart.xaxis" [colors]="barChart.colors" [grid]="barChart.grid"></apx-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12" style="height: inherit;">
+
+            <div class="card border border-primary" style="height: 22rem;">
+                <div class="card-header bg-transparent border-primary">
+                    <h5 class="my-0 text-primary"><i class="mdi mdi-bullseye-arrow mr-3"></i>Movimentações Futuras</h5>
+                </div>
+                <div class="card-body" style="height: inherit;">
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="card-title mt-0" style="font-size: 1.8rem;"> A receber:</p>
+                        </div>
+                        <div class="col-6" style="padding-top: 0.3rem;">
+                            <p class="text-success" style="font-size: 1.5rem; font-weight: 600;">R$
+                                {{paymentstoreceive}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="card-title mt-0" style="font-size: 1.8rem;">A Pagar:</p>
+                        </div>
+                        <div class="col-6" style="padding-top: 0.3rem;">
+                            <p class="text-danger" style="font-size: 1.5rem; font-weight: 600;">R$ -{{paymentstodo}}</p>
+                        </div>
+                    </div>
+                    <hr style="color:darkslategray">
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="card-title mt-0" style="font-size: 1.8rem;">Saldo:</p>
+                        </div>
+                        <div class="col-6" style="padding-top: 0.3rem;">
+                            <p class="text-success" style="font-size: 1.5rem; font-weight: 600;">R$ {{totaltoreceive}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12   d-flex justify-content-center">
+            <div class="row ">
+                <div class="card border border-primary">
+                    <div class="card-header bg-transparent border-primary row">
+                        <h5 class="my-0 text-primary"><i class="mdi mdi-bullseye-arrow mr-3"
+                                style="font-size: 1.5rem;"></i>Pedidos em andamento: </h5>
+                        <h5 style="color: red ; font-size: 1.5rem;; padding-left: 1rem; padding-top: 0.2rem;">
+                            {{norders}}</h5>
+                    </div>
+                    <div class="card-body" style="height: 10rem;">
+                        <div class="row">
+
+                            <div class="card-body   mycontent-left">
+                                <div class="row">
+                                    <div class="">
+                                        <label class="labelpbar">{{paymentsc}} Pagamentos confirmados</label>
+                                        <p>
+                                            <ngb-progressbar type="success" [value]="paymentsc" [striped]="true">
+                                            </ngb-progressbar>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="">
+                                        <label class="labelpbar">{{paymentsp}} Pagamentos pendentes</label>
+                                        <p>
+                                            <ngb-progressbar type="warning" [value]="paymentsp" [striped]="true">
+                                            </ngb-progressbar>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="">
+                                        <label class="labelpbar">{{paymentse}} Pagamentos Extornados</label>
+                                        <p>
+                                            <ngb-progressbar type="danger" [value]="paymentse" [striped]="true">
+                                            </ngb-progressbar>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card border border-primary">
+                <div class="card-header bg-transparent border-primary">
+                    <h5 class="my-0 text-primary"><i class="mdi mdi-bullseye-arrow mr-3"></i>Movimentações Futuras</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+
+                            <thead>
+                                <tr>
+                                    <th>Produto</th>
+                                    <th>Tempo</th>
+
+                                </tr>
+                            </thead>
+                            <tbody class="text-danger">
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Nvidia RTX 2080</td>
+                                    <td>5 dias</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Iphone X</td>
+                                    <td>3 dias</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Macbook Pro</td>
+                                    <td>2 dias</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Intel I9</td>
+                                    <td>1 dias</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>USB sticker</td>
+                                    <td>1 dias</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid"  >
+    <div class="row ">
+        <div class="col-lg-8 col-md-6 col-sm-6">
+            <div class="card border border-primary" style="height: 30rem;">
+                <div class="card-header bg-transparent border-primary">
+                    <h5 class="my-0 text-primary"><i class="mdi mdi-bullseye-arrow mr-3"></i>Vendas totais</h5>
+                </div>
+                <div class="card-body" style="height: inherit;">
+                    <div class="row ">
+                        <div class="col-lg-5 col-md-5 col-sm-12" style="border-right: lightsteelblue;">
+                            <div class="row">
+                                <label style="font-size: 1.5rem;">Vendas Totais: </label>
+                                <label class="text-success" style="font-size: 1.5rem; padding-left: 1.2rem;">R$ {{sales}}</label>
+                                </div>
+                            <apx-chart class="apex-charts" dir="ltr" [series]="donutChart.series"
+                                [chart]="donutChart.chart" [labels]="donutChart.labels" [legend]="donutChart.legend"
+                                [colors]="donutChart.colors" [responsive]="donutChart.responsive">
+                            </apx-chart>
+                        </div>
+                        <div class="col-lg-7 col-md-6 col-sm-6">
+                            <div class="row">
+                                <label style="font-size: 1.5rem;">Taxas Totais: </label>
+                                <label class="text-danger" style="font-size: 1.5rem; padding-left: 1.2rem;">R$ {{tax}}</label>
+                            </div>
+                            <lib-ngx-chartist class="ct-chart" [data]="stackBarChart.data" [options]="stackBarChart.options" [type]="stackBarChart.type"
+                            [events]="stackBarChart.events">
+                            </lib-ngx-chartist>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12">
+            <div class="card border border-primary" style="height: 30rem;">
+                <div class="card-header bg-transparent border-primary">
+                    <h5 class="my-0 text-primary"><i class="mdi mdi-bullseye-arrow mr-3"></i>Minhas Metas
+                    </h5>
+                </div>
+                <div class="card-body" style="height: inherit;">
+                    <div echarts [options]="gaugeChart" class="demo-chart"></div>
+                </div>
+            </div>
+        </div>
+    </div>

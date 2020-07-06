@@ -1,0 +1,128 @@
+<div class="container-fluid">
+
+    <!-- start page title -->
+    <app-page-title title="Product Detail" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-lg-12 ">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <div class="product-detai-imgs">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="card-title">Insira abaixo as fotos do produto.</div>
+                                                    <div>
+                                                        <form>
+                                                            <dropzone class="dropzone"></dropzone>
+                                                        </form>
+                                                    </div>
+                                                    <div class="text-center mt-4">
+                                                        <button type="button" class="btn btn-primary">Enviar
+                                                            Arquivos</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <h4>Canais de Venda</h4>
+                                            <div class="card">
+                                                <div class="mb-4">
+                                                    <div class="form-group" [formGroup]="phoneData">
+                                                        <div formArrayName="phoneValue">
+                                                            <div class="inner mb-3 row"
+                                                                *ngFor="let data1 of  phonedata().controls; let i=index;"
+                                                                [formGroupName]="i">
+                                                                <div class="col-md-10 col-8">
+                                                                    <input type="text" class="inner form-control"
+                                                                        formControlName="name"
+                                                                        placeholder="Enter your phone no...">
+                                                                </div>
+                                                                <div class="col-md-2 col-4">
+                                                                    <input type="button"
+                                                                        class="btn btn-primary btn-block inner"
+                                                                        value="Delete" (click)="deletePhone(i)">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <input type="button" class="btn btn-success inner" value="Adicionar"
+                                                        (click)="addPhone()">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-6">
+                                <div class="mt-4 mt-xl-3">
+                                    <div class="md-form">
+                                        <input mdbInput type="text" id="form1" class="form-control"
+                                            style="display:none">
+                                    </div>
+                                    <div class="md-form">
+                                        <label for="form1" class="">Marca:</label>
+                                        <input mdbInput type="text" id="form1" class="form-control">
+                                    </div>
+                                    <div class="md-form">
+                                        <label for="form1" class="">Categoria</label>
+                                        <input mdbInput type="text" id="form1" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="formmessage">Descrição :</label>
+                                        <textarea id="formmessage" class="form-control" rows="3"></textarea>
+                                    </div>
+                                    <h4>Caracteristicas do Produto :</h4>
+                                    <div class="form-group" [formGroup]="form">
+                                        <div formArrayName="formlist">
+                                            <div class="inner mb-3 row"
+                                                *ngFor="let data1 of  formData().controls; let i=index;"
+                                                [formGroupName]="i">
+                                                <div class="col-md-10 col-8">
+                                                    <input type="text" class="inner form-control" formControlName="name"
+                                                        placeholder="Enter your phone no...">
+                                                </div>
+                                                <div class="col-md-2 col-4">
+                                                    <input type="button" class="btn btn-primary btn-block inner"
+                                                        value="Delete" (click)="removeField(i)">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="button" class="btn btn-success inner" value="Adicionar"
+                                        (click)="addField()">
+                                    <h5 class="font-size-15">Cores :</h5>
+                                    <div class="form-group" [formGroup]="color">
+                                        <div formArrayName="colorValue">
+                                            <div class="inner mb-3 row"
+                                                *ngFor="let data1 of  colordata().controls; let i=index;"
+                                                [formGroupName]="i">
+                                                <div class="col-md-10 col-8">
+                                                    <input type="text" class="inner form-control" formControlName="name"
+                                                        placeholder="Enter your phone no...">
+                                                </div>
+                                                <div class="col-md-2 col-4">
+                                                    <input type="button" class="btn btn-primary btn-block inner"
+                                                        value="Delete" (click)="deleteColor(i)">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="button" class="btn btn-success inner" value="Adicionar"
+                                        (click)="addColor()">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
+
+</div> <!-- container-fluid -->

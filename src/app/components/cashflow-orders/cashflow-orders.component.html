@@ -1,0 +1,94 @@
+<div class="table-responsive mb-0">
+    <table class="table table-centered table-nowrap">
+      <thead class="thead-light">
+        <tr>
+            <th style="width: 20px;">
+                <div class="custom-control custom-checkbox">
+                  <input id="customCheck" type="checkbox" class="custom-control-input" />
+                  <label class="custom-control-label" for="customCheck">&nbsp;</label>
+                </div>
+              </th>
+          <th>Identificação</th>
+          <th>Data</th>
+          <th>Quantidade</th>
+          <th>Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of cashfloworders">
+        <td>
+             <div class="custom-control custom-checkbox">
+                <input id="customCheck{{data.index}}" type="checkbox" class="custom-control-input" />
+                <label class="custom-control-label" for="customCheck{{data.index}}">&nbsp;</label>
+             </div>
+        </td>
+          <td>
+            <a href="javascript: void(0);" class="text-body font-weight-bold">{{data.id}}</a>
+          </td>
+          <td>{{data.date}}</td>
+          <td>{{data.quantity}}</td>
+          <td class="text-success">{{data.total}}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <ng-template #content role="document" let-modal>
+      <div class="modal-header">
+        <h5 class="modal-title mt-0">Vendas Envolvidas</h5>
+        <button type="button" class="close" aria-hidden="true" (click)="modal.dismiss('Cross click')">×</button>
+      </div>
+      <div class="modal-body">
+        <p class="mb-2">
+          Identificação do fluxo:
+          <span class="text-primary">#SK2540</span>
+        </p>
+        
+        <div class="table-responsive">
+          <table class="table table-centered table-nowrap">
+            <thead>
+              <tr>
+                <th scope="col">Identificação da venda</th>
+                <th scope="col">Data da venda</th>
+                <th scope="col">Valor do venda</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  #SALE2570
+                </th>
+                <td>
+                  <div>
+                    <h5 class="text-truncate font-size-14">27/02/2020</h5>
+                  </div>
+                </td>
+                <td>R$ 255</td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  #SALE2579
+                </th>
+                <td>
+                  <div>
+                    <h5 class="text-truncate font-size-14">29/02/2020</h5>
+                  </div>
+                </td>
+                <td>R$ 255</td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <h6 class="m-0 text-right">Total:</h6>
+                </td>
+                <td>R$ 400</td>
+              </tr>
+  
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
+      </div>
+    </ng-template>
+  </div>
+  <!-- end table -->

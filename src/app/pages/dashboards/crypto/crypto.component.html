@@ -1,0 +1,155 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-7 col-sm-12">
+      <div class="row">
+        <div class="col-6">
+          <div class="card border border-primary">
+            <div class="card-body">
+              <h5 class="my-0 text-primary">
+                <i class="mdi mdi-bullseye-arrow mr-3" style="font-size: 1.5rem;"></i>Pagamentos
+              </h5>
+              <br>
+              <div class="row">
+                <div class="col-6">
+                  <span style="color: darkblue;font-size: 22px;">Receita</span>
+                </div>
+                <div class="col-6">
+                  <span style="color: green;font-size: 22px;float: right;">R${{ income }}</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <span style="color: darkblue;font-size: 22px;">Despesas</span>
+                </div>
+                <div class="col-6">
+                  <span style="color: red;font-size: 22px;float: right;">-R${{ expenses }}</span>
+                </div>
+              </div>
+              <hr>
+              <span style="color: darkblue;font-size: 22px;float: left;">Saldo</span>
+              <span style="color: darkblue;font-size: 28px;float: right;font-weight: 700;">R${{ balance }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="card border border-primary">
+            <div class="card-body">
+              <h5 class="my-0 text-primary">
+                <i class="mdi mdi-bullseye-arrow mr-3" style="font-size: 1.5rem;"></i>Pagamentos futuros
+              </h5>
+              <br>
+              <div class="row">
+                <div class="col-6">
+                  <span style="color: darkblue;font-size: 22px;">A receber</span>
+                </div>
+                <div class="col-6">
+                  <span style="color: green;font-size: 22px;float: right;">R${{ receive }}</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <span style="color: darkblue;font-size: 22px;">A pagar</span>
+                </div>
+                <div class="col-6">
+                  <span style="color: red;font-size: 22px;float: right;">-R${{ pay }}</span>
+                </div>
+              </div>
+              <hr>
+              <span style="color: darkblue;font-size: 22px;float: left;">Saldo</span>
+              <span style="color: darkblue;font-size: 28px;float: right;font-weight: 700;">R${{ balance2 }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="card border border-primary">
+            <div class="card-body">
+              <h5 class="my-0 text-primary">
+                <i class="mdi mdi-bullseye-arrow mr-3" style="font-size: 1.5rem;"></i>Receitas e despesas
+              </h5>
+              <br>
+              <apx-chart class="apex-charts" dir="ltr" [series]="incomeExpensesChart.series"
+                         [chart]="incomeExpensesChart.chart" [colors]="incomeExpensesChart.colors"
+                         [plotOptions]="incomeExpensesChart.plotOptions" [yaxis]="incomeExpensesChart.yaxis"
+                         [legend]="incomeExpensesChart.legend" [labels]="incomeExpensesChart.labels"
+                          [markers] = "incomeExpensesChart.markers" [xaxis]="incomeExpensesChart.xaxis">
+              </apx-chart>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card border border-primary">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12">
+              <h5 class="my-0 text-primary">
+                <i class="mdi mdi-bullseye-arrow mr-3" style="font-size: 1.5rem;"></i>Taxas
+              </h5>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+              <span style="color: darkblue;font-size: 22px">Venda total</span>
+              <span style="color: darkblue;font-size: 26px;float: right;font-weight: 700;">R${{ totalSale }}</span>
+              <apx-chart class="apex-charts" dir="ltr" [series]="totalSaleChart.series"
+                         [chart]="totalSaleChart.chart" [colors]="totalSaleChart.colors"
+                         [plotOptions]="totalSaleChart.plotOptions" [yaxis]="totalSaleChart.yaxis"
+                         [legend]="totalSaleChart.legend" [labels]="totalSaleChart.labels"
+                         [markers] = "totalSaleChart.markers" [xaxis]="totalSaleChart.xaxis">
+              </apx-chart>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <span style="color: darkblue;font-size: 22px">Taxa total</span>
+              <span style="color: red;font-size: 26px;float: right;font-weight: 700;">R${{ totalFee }}</span>
+
+              <form>
+                <select name="fee" id="fee">
+                  <option value="Marketplaces">Marketplace</option>
+                  <option value="cardBanner">Bandeira de cartão</option>
+                  <option value="cardMachine">Máquina de cartão</option>
+                </select>
+              </form>
+
+              <br>
+              <apx-chart class="apex-charts" dir="ltr" [series]="totalFeeChart.series"
+                         [chart]="totalFeeChart.chart" [colors]="totalFeeChart.colors"
+                         [plotOptions]="totalFeeChart.plotOptions" [yaxis]="totalFeeChart.yaxis"
+                         [legend]="totalFeeChart.legend" [labels]="totalFeeChart.labels"
+                         [markers] = "totalFeeChart.markers" [xaxis]="totalFeeChart.xaxis"
+                         [dataLabels] = "totalFeeChart.dataLabels">
+              </apx-chart>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5 col-sm-12">
+      <div class="row">
+        <div class="col-12">
+          <div class="card border border-primary">
+            <h5 class="my-0 text-primary">
+              <i class="mdi mdi-bullseye-arrow mr-3" style="font-size: 1.5rem;"></i>Próximos recebimentos
+            </h5>
+            <br>
+            <app-transaction-next-receipts [transactionsReceipts]="transactionsReceipts"></app-transaction-next-receipts>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="card border border-primary">
+            <h5 class="my-0 text-primary">
+              <i class="mdi mdi-bullseye-arrow mr-3" style="font-size: 1.5rem;"></i>Próximos pagamentos
+            </h5>
+            <br>
+            <app-transaction-next-payments [transactionsPayments]="transactionsPayments"></app-transaction-next-payments>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

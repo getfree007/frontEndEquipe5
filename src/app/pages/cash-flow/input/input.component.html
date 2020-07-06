@@ -1,0 +1,101 @@
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-lg-6 col-md-12 col-sm-12">
+            <div class="card border border-primary">
+                <div class="card-header bg-transparent border-primary">
+                    <h5 class="my-0 text-primary"><i class="mdi mdi-bullseye-arrow mr-3"></i>Movimentações Futuras</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive" style="height: 20rem;">
+                        <table class="table mb-0">
+
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Data</th>
+                                    <th>Descrição</th>
+                                    <th>Valor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>27/05/2020</td>
+                                    <td>MagaLu</td>
+                                    <td class="text-success">R$ 400</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>27/05/2020</td>
+                                    <td>Via Varejo</td>
+                                    <td class="text-success">R$ 400</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>27/05/2020</td>
+                                    <td>B2W</td>
+                                    <td class="text-success">R$ 400</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>27/05/2020</td>
+                                    <td>Forncedor</td>
+                                    <td class="text-danger">R$ -400</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>27/05/2020</td>
+                                    <td>Mercado Livre</td>
+                                    <td class="text-success">R$ 400</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>27/05/2020</td>
+                                    <td>B2W</td>
+                                    <td class="text-success">R$ 400</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card border border-primary">
+                <div class="card-header bg-transparent border-primary">
+                    <h5 class="my-0 text-primary"><i class="mdi mdi-bullseye-arrow mr-3"></i>Fluxo de Caixa</h5>
+                </div>
+                <div class="card-body">
+                    <div echarts [options]="lineBarChart" class="demo-chart" style="height: 20rem;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card fl">
+                <div class="card-header bg-transparent border-primary">
+                    <h5 class="my-0 text-primary text-success" style="font-size: 2rem; font-weight: 600;">Entradas</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-sm-4">
+                        </div>
+                        <div class="col-sm-8">
+                            
+                        </div><!-- end col-->
+                    </div>
+                    <!-- Table data -->
+                    <app-table-cashflow [cashflow]="cashflow"></app-table-cashflow>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

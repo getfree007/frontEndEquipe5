@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <app-page-title title="integração com os marketplaces"></app-page-title>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class>
+                <div class="table-responsive">
+                    <table class="table project-list-table table-nowrap table-centered table-borderless">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width: 150px"></th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let project of projectData">
+                                <td>
+                                    <img src="{{project.image}}" alt class="avatar-sm" />
+                                </td>
+                                <td>
+                                    <h5 class="text-truncate font-size-14">
+                                        <a href="javascript: void(0);" class="text-dark">{{project.text}}</a>
+                                    </h5>
+
+                                </td>
+                                <td>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-success btn-sm btn-rounded">Fazer a integração</button>
+                                  </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

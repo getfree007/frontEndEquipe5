@@ -1,0 +1,95 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12 small-box">
+
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 small-box">
+
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="col-auto">
+      <div class="container-fluid">
+        <app-page-title title="Gerenciamento de Estoque" ></app-page-title>
+
+        <div class="row">
+          <div class="col-12">
+            <div class="card border border-primary">
+              <div class="card-body">
+                <div class="row mb-2">
+                  <div class="col-sm-4">
+                    <div class="search-box mr-2 mb-2 d-inline-block">
+                      <div class="position-relative">
+                        <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="term">
+                        <i class="bx bx-search-alt search-icon"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- end col-->
+
+                <!-- Table data -->
+                <div class="row">
+                  <div class="col-md-9 col-sm-12">
+                    <app-transaction-stock [transactions]="transactions" [titles]="titles"></app-transaction-stock>
+                  </div>
+                  <div class="col-md-3 col-sm-12 shadowBox border border-primary" style="border-radius: 4px;">
+                    <h5 class="my-0 text-primary">
+                      <i class="mdi mdi-bullseye-arrow mr-3" style="font-size: 1.5rem;"></i>Estoque dos produtos mais vendidos
+                    </h5>
+                    <div *ngFor="let data of topSellingProducts">
+                      <label class="labelpbar">{{ data.productAmount }} {{ data.productName }}</label>
+                      <p>
+                        <ngb-progressbar type="danger" [value]="data.productAmount" [striped]="true" >
+                        </ngb-progressbar>
+                      </p>
+                    </div>
+
+                    <br>
+                    <h5 class="my-0 text-primary">
+                      <i class="mdi mdi-bullseye-arrow mr-3" style="font-size: 1.5rem;"></i>Pouco Estoque
+                    </h5>
+                    <table class="table table-centered table-nowrap ">
+                      <thead class="thead-light">
+                      <tr>
+                        <th>Produto</th>
+                        <th>Qtd.</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr *ngFor="let data of littleStock" class="font">
+                        <td>{{ data.productName}}</td>
+                        <td style='text-align:right'>{{ data.amount }}</td>
+                      </tr>
+                      </tbody>
+                    </table>
+
+                    <br>
+                    <h5 class="my-0 text-primary">
+                      <i class="mdi mdi-bullseye-arrow mr-3" style="font-size: 1.5rem;"></i>Produtos em falta
+                    </h5>
+                    <table class="table table-centered table-nowrap ">
+                      <thead class="thead-light">
+                      <tr>
+                        <th>Produto</th>
+                        <th>Tempo</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr *ngFor="let data of stockless" class="font">
+                        <td>{{ data.productName}}</td>
+                        <td style='text-align:right'>{{ data.time }}</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

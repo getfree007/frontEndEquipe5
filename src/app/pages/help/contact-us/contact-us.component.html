@@ -1,0 +1,107 @@
+<div class="container-fluid">
+    <app-page-title title="Nós estamos aqui para te ajudar!"></app-page-title>
+
+    <div class="checkout-tabs">
+        <div class="row">
+            <div class="col-lg-2">
+                <ul ngbNav #nav="ngbNav" [activeId]="1" class="flex-column nav-pills">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink>
+                            <i class="bx bx-question-mark d-block check-nav-icon mt-4 mb-2"></i>
+                            <p class="font-weight-bold mb-4">Perguntas Frequentes</p>
+                        </a>
+                        <ng-template ngbNavContent>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="fade active show" id="v-pills-gen-ques">
+                                        <h4 class="card-title mb-5">Perguntas Frequentes</h4>
+                                        <div class="faq-box media mb-4">
+                                            <div class="faq-icon mr-3">
+                                                <i class="bx bx-help-circle font-size-20 text-success"></i>
+                                            </div>
+                                            <div class="media-body">
+                                                <h5 class="font-size-15">Por onde começar?</h5>
+                                                <p class="text-muted">Comece preenchendo seu <a href="">perfil</a> e
+                                                    fazendo a <a href="">integração com seus marketplaces</a></p>
+                                            </div>
+                                        </div>
+                                        <div class="faq-box media mb-4">
+                                            <div class="faq-icon mr-3">
+                                                <i class="bx bx-help-circle font-size-20 text-success"></i>
+                                            </div>
+                                            <div class="media-body">
+                                                <h5 class="font-size-15">Como registrar um produto novo?</h5>
+                                                <p class="text-muted">Vá à pagina <a href="">Adicionar produtos</a> e
+                                                    preencha as informações de seus produtos</p>
+                                            </div>
+                                        </div>
+                                        <div class="faq-box media mb-4">
+                                            <div class="faq-icon mr-3">
+                                                <i class="bx bx-help-circle font-size-20 text-success"></i>
+                                            </div>
+                                            <div class="media-body">
+                                                <h5 class="font-size-15">Como gerenciar meu estoque?</h5>
+                                                <p class="text-muted">Vá à pagina <a href="">Meu estoque</a> dentro da
+                                                    aba produtos e lá estarão todas as informacões que você precisa!</p>
+                                            </div>
+                                        </div>
+                                        <div class="faq-box media mb-4">
+                                            <div class="faq-icon mr-3">
+                                                <i class="bx bx-help-circle font-size-20 text-success"></i>
+                                            </div>
+                                            <div class="media-body">
+                                                <h5 class="font-size-15">Os meus dados estão seguros?</h5>
+                                                <p class="text-muted">Os dados inseridos na plaforma Gestão+ estão
+                                                    protegidos pela <a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm"
+                                                        target="_blank">Lei geral de proteção de dados</a>
+                                                    e estão totalmente seguros!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </li>
+
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink>
+                            <i class="bx bx-support d-block check-nav-icon mt-4 mb-2"></i>
+                            <p class="font-weight-bold mb-4">Suporte</p>
+                        </a>
+                        <ng-template ngbNavContent>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="tab-pane">
+                                        <h4 class="card-title mb-5">Suporte</h4>
+
+                                        <div class="faq-box media mb-4">
+                                            <div class="faq-icon mr-3">
+                                                <i class="bx bx-help-circle font-size-20 text-success"></i>
+                                            </div>
+                                            <div class="media-body">
+                                                <h5 class="font-size-15">Você pode nos enviar um email que te responderemos na hora!</h5>
+                                                <p class="text-muted"><a href="mailto:atendimento@gestaomais.com">atendimento@gestaomais.com</a></p>
+                                            </div>
+                                        </div>
+                                        <div class="faq-box media mb-4">
+                                            <div class="faq-icon mr-3">
+                                                <i class="bx bx-help-circle font-size-20 text-success"></i>
+                                            </div>
+                                            <div class="media-body">
+                                                <h5 class="font-size-15">Ou entrar em contato conosco no nosso chat 24 horas</h5>
+                                                <p class="text-muted"><a href="">Clique <a href="">aqui</a> para falar com nossos atendentes</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-10">
+                <div [ngbNavOutlet]="nav"></div>
+            </div>
+        </div>
+    </div>
+</div>

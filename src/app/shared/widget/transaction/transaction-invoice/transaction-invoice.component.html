@@ -1,0 +1,96 @@
+<div class="table-responsive mb-0">
+  <table class="table table-centered table-nowrap">
+    <thead class="thead-light">
+    <tr>
+      <th>Data</th>
+      <th>Cod. Pedido</th>
+      <th>Cod. Cliente</th>
+      <th>Marketplace</th>
+      <th>Valor Pedido</th>
+      <th>Nota Fiscal</th>
+      <th>Etiqueta</th>
+      <th>Detalhes Pedido</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let data of transactions">
+      <td>{{ data.dataCriado }}</td>
+      <td>
+        <a href="javascript: void(0);" class="text-body font-weight-bold">{{ data.codPedido }}</a>
+      </td>
+      <td>{{ data.codCliente }}</td>
+      <td>{{ data.nomePlataforma }}</td>
+      <td>{{ data.total }}</td>
+      <td>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary btn-sm btn-rounded" >Gerar NF</button>
+      </td>
+      <td>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary btn-sm btn-rounded" >Gerar Etiqueta</button>
+      </td>
+      <td>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary btn-sm btn-rounded" (click)="openModal(content,data)">Detalhes</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <ng-template #content role="document" let-modal>
+    <div class="modal-header">
+      <h5 class="modal-title mt-0">Detalhes do pedido &nbsp; {{ requestCode }}</h5>
+      <button type="button" class="close" aria-hidden="true" (click)="modal.dismiss('Cross click')">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="table-responsive">
+        <table class="table table-centered table-nowrap">
+          <thead>
+          <tr>
+            <th scope="col">Produto</th>
+            <th scope="col">Cód. Produto</th>
+            <th scope="col">Preço</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th scope="row">
+              <div>
+                <img [src]="productImagem" alt class="avatar-sm" />
+              </div>
+            </th>
+            <td>
+              <div>
+                <h5 class="text-truncate font-size-14">{{ productCode }}</h5>
+                <p class="text-muted mb-0">{{ value }} x {{ productAmount }}</p>
+              </div>
+            </td>
+            <td>{{ value }}</td>
+          <tr>
+            <td colspan="2">
+              <h6 class="m-0 text-right">Sub Total:</h6>
+            </td>
+            <td>{{ value }}</td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <h6 class="m-0 text-right">Remessa:</h6>
+            </td>
+            <td>Grátis</td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <h6 class="m-0 text-right">Total:</h6>
+            </td>
+            <td>{{ value }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+</div>
+<!-- end table -->
