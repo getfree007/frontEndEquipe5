@@ -121,7 +121,7 @@ export class MyProductsComponent implements OnInit {
         data: '07 Oct, 2019',
         precoVenda: 'R$ 1851,95',
         precoCusto:  'R$ 2094,99',
-        descricao: 'fauishfuiahfi',
+        descricao: 'Placa de Vídeo Galax NVIDIA GeForce GTX 1660 Super EX (1-Click OC), 6GB, GDDR6',
         fotos1 : 'assets/images/product/placa/1.jpg',
         fotos11 : 'assets/images/product/placa/2.jpg',
         fotos2 : 'assets/images/product/mercado.png',
